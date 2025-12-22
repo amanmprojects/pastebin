@@ -88,8 +88,9 @@ export default function PasteDisplay({ id, text }: PasteDisplayProps) {
 
                 {/* Content Box */}
                 <div className="relative group">
-                    <div className="absolute -inset-px bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-sm opacity-50 group-hover:opacity-100 transition-opacity" />
-                    <div className="relative bg-[#0b1120]/80 border border-slate-800 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl">
+                    {/* Glow effect on hover */}
+                    <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/25 to-purple-500/25 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative bg-[#0b1120]/80 border border-slate-800 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 group-hover:border-indigo-500/50">
                         <div className="flex items-center gap-1.5 px-4 py-3 bg-slate-900/50 border-b border-slate-800">
                             <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/40" />
                             <div className="w-3 h-3 rounded-full bg-amber-500/20 border border-amber-500/40" />
