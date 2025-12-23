@@ -19,7 +19,7 @@ export default async function Page({
   const { id } = await params;
 
   const paste = await prisma.pasteList.findUnique({
-    where: { id: parseInt(id) },
+    where: { id },
   });
 
   if (!paste) {

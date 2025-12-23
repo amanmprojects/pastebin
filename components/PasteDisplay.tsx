@@ -51,7 +51,7 @@ export default function PasteDisplay({ id, text }: PasteDisplayProps) {
                             Back to Home
                         </Link>
                         <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400 tracking-tight">
-                            Paste <span className="text-indigo-500">#{id}</span>
+                            Paste <span className="text-indigo-500 text-2xl md:text-3xl">#{id}</span>
                         </h1>
                     </div>
 
@@ -97,9 +97,9 @@ export default function PasteDisplay({ id, text }: PasteDisplayProps) {
                             <div className="w-3 h-3 rounded-full bg-emerald-500/20 border border-emerald-500/40" />
                             <span className="ml-2 text-xs font-mono text-slate-500 uppercase tracking-widest">Plaintext Content</span>
                         </div>
-                        <div className="p-6 md:p-8 min-h-[400px]">
+                        <div className="p-6 md:p-8 min-h-[400px] max-h-[650px] overflow-auto custom-scrollbar">
                             <pre className="font-mono text-sm md:text-base leading-relaxed text-slate-300 whitespace-pre-wrap break-words">
-                                <code>{text}</code>
+                                <code className="block">{text}</code>
                             </pre>
                         </div>
                     </div>

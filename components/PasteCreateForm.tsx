@@ -12,22 +12,22 @@ export default function PasteCreateForm() {
     };
 
     return (
-        <div className="min-h-screen bg-[#030712] text-slate-200 font-sans selection:bg-indigo-500/30">
+        <div className="h-screen bg-[#030712] text-slate-200 font-sans selection:bg-indigo-500/30 overflow-hidden">
             {/* Background decoration */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] bg-indigo-500/10 blur-[130px] rounded-full" />
                 <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-500/10 blur-[130px] rounded-full" />
             </div>
 
-            <main className="relative z-10 max-w-4xl mx-auto px-6 py-10 md:py-16 flex flex-col items-center">
+            <main className="relative z-10 max-w-4xl mx-auto px-6 py-6 md:py-10 flex flex-col items-center h-full">
                 {/* Logo/Header */}
-                <div className="text-center mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                <div className="text-center mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
                     <div className="inline-flex items-center justify-center p-2 mb-4 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 shadow-inner">
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-3">
+                    <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-2">
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400">
                             Instant
                         </span>{" "}
@@ -43,13 +43,13 @@ export default function PasteCreateForm() {
                     action="/api/create-paste"
                     method="post"
                     onSubmit={handleSubmit}
-                    className="w-full animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200"
+                    className="w-full flex-1 flex flex-col min-h-0 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200"
                 >
-                    <div className="relative group">
+                    <div className="relative group flex-1 flex flex-col min-h-0">
                         {/* Glow effect on focus */}
                         <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/25 to-purple-500/25 rounded-2xl blur-xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-500" />
 
-                        <div className="relative bg-[#0b1120]/80 border border-slate-800 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 group-focus-within:border-indigo-500/50">
+                        <div className="relative flex-1 flex flex-col min-h-0 bg-[#0b1120]/80 border border-slate-800 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 group-focus-within:border-indigo-500/50">
                             {/* Fake window controls */}
                             <div className="flex items-center justify-between px-4 py-2.5 bg-slate-900/50 border-b border-slate-800">
                                 <div className="flex gap-1.5">
@@ -64,12 +64,11 @@ export default function PasteCreateForm() {
                             <textarea
                                 name="text"
                                 id="text"
-                                rows={8}
                                 required
                                 value={text}
                                 onChange={(e) => setText(e.target.value)}
                                 placeholder="Paste your code or text here..."
-                                className="w-full bg-transparent p-5 md:p-6 font-mono text-sm md:text-base text-slate-300 placeholder:text-slate-600 focus:outline-none resize-none scrollbar-thin scrollbar-thumb-slate-800 scrollbar-track-transparent"
+                                className="w-full flex-1 bg-transparent p-5 md:p-6 font-mono text-sm md:text-base text-slate-300 placeholder:text-slate-600 focus:outline-none resize-none scrollbar-thin scrollbar-thumb-slate-800 scrollbar-track-transparent"
                             />
 
                             <div className="flex items-center justify-between px-6 py-3 bg-slate-900/30 border-t border-slate-800/50">
@@ -104,7 +103,7 @@ export default function PasteCreateForm() {
                 </form>
 
                 {/* Footer Features */}
-                <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 w-full animate-in fade-in duration-1000 delay-500">
+                <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 w-full animate-in fade-in duration-1000 delay-500">
                     <div className="p-4 rounded-2xl bg-slate-900/30 border border-slate-800/50 backdrop-blur-sm">
                         <h3 className="font-semibold text-slate-200 mb-1 text-sm text-center md:text-left">Secure Sharing</h3>
                         <p className="text-[11px] text-slate-500 leading-relaxed text-center md:text-left">Safely shared via unique ID.</p>
@@ -115,9 +114,9 @@ export default function PasteCreateForm() {
                         <p className="text-[11px] text-slate-500 leading-relaxed text-center md:text-left">Optimized, bloat-free sharing.</p>
                     </div>
 
-                    <div className="p-4 rounded-2xl bg-slate-900/30 border border-slate-800/50 backdrop-blur-sm">
-                        <h3 className="font-semibold text-slate-200 mb-1 text-sm text-center md:text-left">Clean UI</h3>
-                        <p className="text-[11px] text-slate-500 leading-relaxed text-center md:text-left">Developer-focused interface.</p>
+                    <div className="p-3 rounded-2xl bg-slate-900/30 border border-slate-800/50 backdrop-blur-sm">
+                        <h3 className="font-semibold text-slate-200 mb-0.5 text-xs text-center md:text-left">Clean UI</h3>
+                        <p className="text-[10px] text-slate-500 leading-relaxed text-center md:text-left">Developer-focused interface.</p>
                     </div>
                 </div>
             </main>
